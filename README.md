@@ -18,18 +18,19 @@ Clone: <br>
 <img src="./" width="400" />
 
 ## User Stories
-1. As a user, I want to be able to login to my account.
-2. As a user, I want to see an animated loading icon while my profile loads.
-3. As a user, I want to see the current pollen levels.
-4. As a user, I want to see the current details of particular pollen group.
-5. As a user, I want to see the details of the current pollen group to highlight pollens I am allergic too.
-6. As a user, I want to create a profile that allows me to specify which pollens I know I'm allergic to.
-7. As a user, I want the list of pollens to auto-populate.
-8. As a user, I want to track my symptoms for the day.
-9. As a user, I want to add past symptoms for a given day.
-10. As a user, I want I want to see a graph of my symptoms over time and how it relates to specific pollen groups.
-11. As a user, I want the option to see my symptoms over the past month or the past 3 months.
-12. As a user, I want to see a screen that shows the pollens most active during my tracking period.
+1. As a user, I want to be able to login to my account. (MVP)
+2. As a user, I want to see an animated loading icon while my profile loads. (MVP)
+3. As a user, I want to edit my location. (MVP)
+4. As a user, I want to see the current pollen levels. (MVP)
+5. As a user, I want to see the current details of particular pollen group. (MVP)
+6. As a user, I want to see the details of the current pollen group to highlight pollens I am allergic too.
+7. As a user, I want to create a profile that allows me to specify which pollens I know I'm allergic to.
+8. As a user, I want the list of pollens to auto-populate.
+9. As a user, I want to track my symptoms for the day. (MVP)
+10. As a user, I want to add past symptoms for a given day. (MVP)
+11. As a user, I want I want to see a graph of my symptoms over time and how it relates to specific pollen groups. (MVP)
+12. As a user, I want the option to see my symptoms over the past month or the past 3 months.
+13. As a user, I want to see a screen that shows the pollens most active during my tracking period. (MVP)
 
 
 ## Contact
