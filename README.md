@@ -33,7 +33,7 @@ Clone: <br>
 13. As a user, I want to see a screen that shows the pollens most active during my tracking period. (MVP)
 
 ## Screens Required
-* Login Screen
+* Login Screen.
   - Login Screen with keyboard
 * Loading Screen
 * Landing Page with Current Forecast. Has access to history, user profile, logout, and settings.
