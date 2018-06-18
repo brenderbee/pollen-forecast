@@ -52,9 +52,6 @@ Clone: <br>
         + View showing Add record
         + View showing modify existing record.
         + View showing delete exisitng record.
-      
-## Design
-
   
 ## Contact
 Do not contact anyone with questions or comments regarding this project.
