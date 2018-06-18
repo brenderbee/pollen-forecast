@@ -32,7 +32,30 @@ Clone: <br>
 12. As a user, I want the option to see my symptoms over the past month or the past 3 months.
 13. As a user, I want to see a screen that shows the pollens most active during my tracking period. (MVP)
 
+## Screens Required
+* Login Screen
+  - Login Screen with keyboard
+* Loading Screen
+* Landing Page with Current Forecast. Has access to history, user profile, logout, and settings.
+  - Pollen Detail Page. Shows pollen count breakdown for a specific group OR common pollens for the date.
+  - Symptom tracker page that allows a user to track their daily symptoms.
+    + Symptom Tracker View showing a user has recorded their symptoms for the day. Show option to re-record symptoms for the day.
+  - User Profile Page. Allow user to add or remove known pollen allergies.
+    + User profile page with auto-populated pollen field.
+  - Settings page. Page that allows user to edit current location.
+  - History landing page. Shows mini-graphs for a common allergy word cloud chart, and trend charts with user symptoms over time overlaid with pollen counts. Allows a user to select a graph to expand.
+    + Expanded view of Word Cloud graph.
+    + Expanded view of detailed graph with user symptoms. Under the graph, show the history of tracked symptoms and allow a user to edit, add, or remove a record.
+      - Expanded view with 1 month of data.
+      - Expanded view with 3 months data.
+      - Expanded view of historical records.
+        + View showing Add record
+        + View showing modify existing record.
+        + View showing delete exisitng record.
+      
+## Design
 
+  
 ## Contact
 Do not contact anyone with questions or comments regarding this project.
 
