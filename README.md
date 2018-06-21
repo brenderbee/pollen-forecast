@@ -13,11 +13,37 @@ This project will be built using React.
 
 ### Design
 
-Original: <br>
-<img src="./" width="400" />
+View of Login page: <br>
+<img src="./img/design/login-page.png" width="700" />
 
-Clone: <br>
-<img src="./" width="400" />
+View of Main page: <br>
+<img src="./img/design/main-page.png" width="460" />
+
+View of a Specific Pollen detail Page: <br>
+<img src="./img/design/pollen-detail.png" width="210" />
+
+View of the daily symptom tracker: <br>
+<img src="./img/design/symptom-tracker.png" width="460" />
+
+View of the Predict Pollen allergies page: <br>
+<img src="./img/design/pollen-predict.png" width="210" />
+
+View of History Main page: <br>
+<img src="./img/design/history-main.png" width="210" />
+
+View of expanded history view (week): <br>
+<img src="./img/design/history-week.png" width="460" />
+
+View of expanded history view (month): <br>
+<img src="./img/design/history-month.png" width="460" />
+
+View of the record update page: <br>
+<img src="./img/design/record-edit.png" width="460" />
+
+View of the add allergy page: <br>
+<img src="./img/design/allergy-add.png" width="460" />
+
+
 
 ## User Stories
 1. As a user, I want to be able to login to my account. (MVP)
