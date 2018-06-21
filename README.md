@@ -11,6 +11,8 @@ This project will be built using React.
 
 ## Screenshots
 
+### Design
+
 Original: <br>
 <img src="./" width="400" />
 
@@ -52,7 +54,7 @@ Clone: <br>
         + View showing Add record
         + View showing modify existing record.
         + View showing delete exisitng record.
-  
+
 ## Contact
 Do not contact anyone with questions or comments regarding this project.
 
