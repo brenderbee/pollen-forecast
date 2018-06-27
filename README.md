@@ -7,7 +7,7 @@
 
 This web application is designed to return the current pollen forecast and allow a user to track and view their symptoms over time.
 
-This project will be built using React.
+This project will be built using React Native.
 
 ## Screenshots
 
@@ -15,34 +15,34 @@ This project will be built using React.
 ### Design
 
 View of Login page: <br>
-<img src="./img/design/login-page.png" width="700" />
+<img src="./img/design/login-page2.png" width="700" />
 
 View of Main page: <br>
-<img src="./img/design/main-page.png" width="460" />
+<img src="./img/design/main-page2.png" width="460" />
 
 View of a Specific Pollen detail Page: <br>
-<img src="./img/design/pollen-detail.png" width="210" />
+<img src="./img/design/pollen-detail2.png" width="210" />
 
 View of the daily symptom tracker: <br>
-<img src="./img/design/symptom-tracker.png" width="460" />
+<img src="./img/design/symptom-tracker2.png" width="460" />
 
 View of the Predict Pollen allergies page: <br>
-<img src="./img/design/pollen-predict.png" width="210" />
+<img src="./img/design/pollen-predict2.png" width="210" />
 
 View of History Main page: <br>
-<img src="./img/design/history-main.png" width="210" />
+<img src="./img/design/history-main2.png" width="210" />
 
 View of expanded history view (week): <br>
-<img src="./img/design/history-week.png" width="460" />
+<img src="./img/design/history-week2.png" width="460" />
 
 View of expanded history view (month): <br>
-<img src="./img/design/history-month.png" width="460" />
+<img src="./img/design/history-month2.png" width="460" />
 
 View of the record update page: <br>
-<img src="./img/design/record-edit.png" width="460" />
+<img src="./img/design/record-edit2.png" width="460" />
 
 View of the add allergy page: <br>
-<img src="./img/design/allergy-add.png" width="460" />
+<img src="./img/design/allergy-add2.png" width="460" />
 
 
 
