@@ -1,38 +1,21 @@
-import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  TextInput } from 'react-native';
-// import { Button } from 'react-native-elements';
+import React, { Component } from 'react';
+import { AppRegistry, View } from 'react-native';
 
-export default class App extends React.Component {
+export default class JustifyContentBasics extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-        <TextInput
-          style={styles.searchInput}
-          placeholder='Search via name or postcode'
-        />
-        <Button
-          onPress={() => {}}
-          color='#48BBEC'
-          title='Go'
-        />
+      // Try setting `justifyContent` to `center`.
+      // Try setting `flexDirection` to `row`.
+      <View style={{
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+      }}>
+        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
+        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
