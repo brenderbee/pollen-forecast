@@ -24,6 +24,7 @@
     "react-d3-basic": "^1.6.11",
     "react-native": "~0.55.2",
     "react-native-elements": "^0.19.1",
-    "react-native-tags": "^1.2.1"
+    "react-native-tags": "^1.2.1",
+    "react-native-vector-icons": "^4.6.0"
   }
 }
