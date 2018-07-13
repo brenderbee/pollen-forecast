@@ -11,6 +11,8 @@ This project will be built using React Native.
 
 ## Screenshots
 
+### Component Structure
+<img src="./img/component-structure.png" width="800" />
 
 ### Design
 
