@@ -1,21 +1,59 @@
 import React, { Component } from 'react';
-import { AppRegistry, View } from 'react-native';
+import { Alert, AppRegistry, Button, StyleSheet, View } from 'react-native';
 
-export default class JustifyContentBasics extends Component {
+export default class ButtonBasics extends Component {
+  _onPressButton() {
+    Alert.alert('You tapped the button!')
+  }
+
   render() {
     return (
-      // Try setting `justifyContent` to `center`.
-      // Try setting `flexDirection` to `row`.
-      <View style={{
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-      }}>
-        <View style={{width: 50, height: 50, backgroundColor: 'powderblue'}} />
-        <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
-        <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
+      <View style={styles.container}>
+        <View style={styles.buttonContainer}>
+          <Button
+            onPress={this._onPressButton}
+            title="Press Me"
+          />
+        </View>
+        <View style={styles.buttonContainer}>
+          <Button
+            onPress={this._onPressButton}
+            title="Press Me"
+            color="#841584"
+          />
+        </View>
+        <View style={styles.alternativeLayoutButtonContainer}>
+          <Button
+            onPress={this._onPressButton}
+            title="This looks great!"
+          />
+          <Button
+            onPress={this._onPressButton}
+            title="Learn More"
+            color="#fff"
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </View>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+   flex: 1,
+   justifyContent: 'center',
+  },
+  buttonContainer: {
+    color: '#fff',
+    backgroundColor: '#9f67ff',
+    margin: 20
+  },
+  alternativeLayoutButtonContainer: {
+    color: '#fff',
+    margin: 20,
+    backgroundColor: '#9f67ff',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
+})
