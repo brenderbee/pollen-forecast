@@ -1,42 +1,34 @@
 import React, { Component } from 'react';
-import { AppRegistry, SectionList, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-export default class Header extends Component {
+class Header extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <SectionList
-          sections={[
-            {title: '7-19-18', data: ['Devin']},
-            {title: 'D', data: ['Devin']},
-            {title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie']},
-          ]}
-          renderItem={({item}) => <Text style={styles.item}>{item}</Text>}
-          renderSectionHeader={({section}) => <Text style={styles.sectionHeader}>{section.title}</Text>}
-          keyExtractor={(item, index) => index}
-        />
+      <View style={styles.header}>
+        <Text style={styles.logo}>back</Text>
+        <Text style={styles.logo}>pollen</Text>
+        <Text style={styles.logo}>gear</Text>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-   flex: 1,
-   paddingTop: 22
-  },
-  sectionHeader: {
-    paddingTop: 2,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 2,
-    fontSize: 14,
-    fontWeight: 'bold',
-    backgroundColor: 'rgba(247,247,247,1.0)',
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
+  header: {
     height: 44,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 44,
+    backgroundColor: '#f8f9fe',
+    borderColor: 'red',
+    borderStyle: 'solid',
+    borderWidth: 1
   },
-})
+  logo: {
+    color: '#7d31e9',
+    fontSize: 20,
+  }
+});
+
+export default Header;
