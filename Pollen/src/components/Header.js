@@ -1,13 +1,41 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 
 class Header extends Component {
+  state = {
+    fontLoaded: false,
+  }
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      'Yellowtail-Regular': require('./../../assets/fonts/Yellowtail-Regular.ttf'),
+    });
+    this.setState({ fontLoaded: true });
+  }
+
   render() {
     return (
       <View style={styles.header}>
-        <Text style={styles.logo}>back</Text>
-        <Text style={styles.logo}>pollen</Text>
-        <Text style={styles.logo}>gear</Text>
+        {
+          this.state.fontLoaded ? (
+            <Text style={styles.logo}>
+              back
+            </Text>
+          ) : null
+        }
+        {
+          this.state.fontLoaded ? (
+            <Text style={styles.logo}>
+              Pollen
+            </Text>
+          ) : null
+        }
+        {
+          this.state.fontLoaded ? (
+            <Text style={styles.logo}>
+              Gear
+            </Text>
+          ) : null
+        }
       </View>
     );
   }
@@ -15,17 +43,18 @@ class Header extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    height: 44,
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: 44,
     backgroundColor: '#f8f9fe',
-    borderColor: 'red',
+    borderColor: '#e8e9ec',
     borderStyle: 'solid',
-    borderWidth: 1
+    borderBottomWidth: 1,
+    paddingTop: 44,
+    paddingBottom: 5
   },
   logo: {
+    fontFamily: 'Yellowtail-Regular',
     color: '#7d31e9',
     fontSize: 20,
   }
