@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+  import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 
 class Header extends Component {
   state = {
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   logo: {
     fontFamily: 'Yellowtail-Regular',
     color: '#7d31e9',
-    fontSize: 20,
+    fontSize: 22,
   }
 });
 

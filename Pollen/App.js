@@ -2,11 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Footer from './src/components/Footer';
 import Header from './src/components/Header';
+import Login from './src/components/Login';
 import { Font, AppLoading } from "expo";
 
 export default class App extends React.Component {
   state = {
     fontLoaded: false,
+    login: true
   }
   async componentWillMount() {
     await Expo.Font.loadAsync({
@@ -16,12 +18,18 @@ export default class App extends React.Component {
   }
 
   render(){
-    return(
-      <View style={styles.container}>
-        <Header />
-        <Footer />
-      </View>
-    );
+    if (!this.state.login) {
+      return(
+        <Login />
+      );
+    } else {
+      return(
+        <View style={styles.container}>
+          <Header />
+          <Footer />
+        </View>
+      );
+    }
   }
 }
 

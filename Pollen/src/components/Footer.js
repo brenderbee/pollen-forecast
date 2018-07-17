@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#222222',
-    fontSize: 20
+    fontSize: 16
   },
   content: {
     marginLeft: 20,
