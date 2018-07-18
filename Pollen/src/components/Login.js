@@ -10,9 +10,7 @@ export default class Login extends React.Component {
   }
 
   pressLogin = () => {
-    this.setState({
-      name: "Coulibaly"
-    });
+    alert('you pressed login');
   };
 
   async componentWillMount() {
@@ -25,7 +23,7 @@ export default class Login extends React.Component {
   render() {
     return (
         <LinearGradient
-          colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55 )']}
+          colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
           style={styles.gradient}>
           <View style={styles.wrapper}>
             <View style={styles.hero}>
@@ -56,7 +54,7 @@ export default class Login extends React.Component {
               </View>
             </View>
             <View>
-              <Text style={styles.signup}>Not a member? Sign up!</Text>
+              <Text style={styles.signup}>Not a member? <Text style={styles.signup2}>Sign up!</Text></Text>
             </View>
           </View>
         </LinearGradient>
@@ -97,7 +95,6 @@ const styles = StyleSheet.create({
   button: {
     marginLeft: 'auto',
     marginRight: 'auto',
-    marginTop: 10,
     justifyContent: 'center',
     width: '75%',
     borderRadius: 2,
@@ -108,5 +105,8 @@ const styles = StyleSheet.create({
     color: '#2A2A2A',
     textAlign: 'center',
     marginBottom: 50
+  },
+  signup2: {
+    fontWeight: 'bold'
   }
 });

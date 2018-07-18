@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-  import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import SvgUri from 'react-native-svg-uri';
 
 class Header extends Component {
   state = {
@@ -15,13 +16,9 @@ class Header extends Component {
   render() {
     return (
       <View style={styles.header}>
-        {
-          this.state.fontLoaded ? (
-            <Text style={styles.logo}>
-              back
-            </Text>
-          ) : null
-        }
+        <View>
+          <SvgUri width="18" height="18" source={require('./../../assets/img/arrow-left-solid.svg')} />
+        </View>
         {
           this.state.fontLoaded ? (
             <Text style={styles.logo}>
@@ -29,13 +26,10 @@ class Header extends Component {
             </Text>
           ) : null
         }
-        {
-          this.state.fontLoaded ? (
-            <Text style={styles.logo}>
-              Gear
-            </Text>
-          ) : null
-        }
+
+        <View>
+          <SvgUri width="18" height="18" source={require('./../../assets/img/cogs-solid.svg')} />
+        </View>
       </View>
     );
   }
@@ -51,7 +45,9 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderBottomWidth: 1,
     paddingTop: 44,
-    paddingBottom: 5
+    paddingBottom: 5,
+    paddingLeft: 20,
+    paddingRight: 20
   },
   logo: {
     fontFamily: 'Yellowtail-Regular',
