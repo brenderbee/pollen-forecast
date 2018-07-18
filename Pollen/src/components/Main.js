@@ -12,6 +12,7 @@ export default class Main extends Component {
     return (
       <View style={styles.main}>
         <PollenSummary />
+        <TrackerList />
       </View>
     );
   }
