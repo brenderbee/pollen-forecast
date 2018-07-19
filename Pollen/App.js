@@ -1,22 +1,28 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
+import firebase from 'firebase';
 import Footer from './src/components/Footer';
 import Main from './src/components/Main';
 import Header from './src/components/Header';
 import Login from './src/components/Login';
-import Expo, { Font, AppLoading } from "expo";
+import { masterFirebaseConfig } from './api-keys';
+
+const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  projectId: masterFirebaseConfig.projectId,
+  storageBucket: masterFirebaseConfig.storageBucket,
+  messagingSenderId: masterFirebaseConfig.messagingSenderId
+};
 
 export default class App extends React.Component {
   state = {
-    fontLoaded: false,
     login: false
   }
-  async componentWillMount() {
-    await Expo.Font.loadAsync({
-      'Yellowtail-Regular': require('./assets/fonts/Yellowtail-Regular.ttf'),
-    });
 
-    this.setState({ fontLoaded: true });
+  componentWillMount() {
+    firebase.initializeApp(firebaseConfig);
   }
 
   render() {
@@ -40,11 +46,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-  },
-
-  customFont: {
-    fontFamily: 'Yellowtail-Regular',
-    fontWeight: 'bold',
-    fontStyle: 'italic'
   }
 });
