@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
-import { LinearGradient, Font, AppLoading } from 'expo';
+import { LinearGradient } from 'expo';
+import { Input } from './../common';
 
 export default class Login extends React.Component {
   state = {
     fontLoaded: false,
-    userName: '',
+    email: '',
     password: ''
   }
 
@@ -32,16 +33,14 @@ export default class Login extends React.Component {
                   <Text style={styles.logo}>Pollen</Text>
                 ) : null
               }
-              <TextInput
-                style={styles.input}
-                onChangeText={(text) => this.setState({text})}
-                value={this.state.userName}
-                placeholder='username'
+              <Input
+                value={this.state.email}
+                onChangeText={(email) => this.setState({ email })}
+                placeholder='user@email.com'
               />
-              <TextInput
-                style={styles.input}
-                onChangeText={(text) => this.setState({text})}
+              <Input
                 value={this.state.password}
+                onChangeText={(password) => this.setState({ password })}
                 placeholder='password'
                 secureTextEntry={true}
               />
@@ -81,17 +80,6 @@ const styles = StyleSheet.create({
     color: '#7d31e9',
     textAlign: 'center',
     marginBottom: 40
-  },
-  input: {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    marginBottom: 10,
-    height: 50,
-    fontSize: 16,
-    width: '75%',
-    padding: 16,
-    borderRadius: 2,
-    backgroundColor: 'rgba(255, 255, 255, .75)'
   },
   button: {
     marginLeft: 'auto',
