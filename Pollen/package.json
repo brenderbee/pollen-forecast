@@ -27,6 +27,7 @@
     "react-d3-basic": "^1.6.11",
     "react-native": "~0.55.2",
     "react-native-elements": "^0.19.1",
+    "react-native-indicators": "^0.13.0",
     "react-native-svg": "^6.4.1",
     "react-native-svg-charts": "^5.2.0",
     "react-native-svg-uri": "^1.2.3",

@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import { BallIndicator } from 'react-native-indicators';
 
-function Spinner({ size }) {
+function Spinner() {
   return (
     <View style={styles.spinnerStyle}>
-      <ActivityIndicator size={size || 'large'} />
+      <BallIndicator color={'#7d31e9'}/>
     </View>
   );
 }

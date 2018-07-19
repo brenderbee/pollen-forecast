@@ -26,6 +26,7 @@ export default class Login extends React.Component {
     this.setState({ error: '', loading: true });
 
     firebase.auth().signInWithEmailAndPassword(email, password)
+      .then()
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
           .catch(() => {
@@ -34,24 +35,15 @@ export default class Login extends React.Component {
       });
   }
 
-  renderButton() {
-    if (this.state.loading) {
-      return <Spinner size='small'/>
-    }
-
-    return (
-      <View style={styles.button}>
-        <Button
-          onPress={this.onButtonPress.bind(this)}
-          title="LOGIN"
-          color="white"
-          accessibilityLabel="Learn more about this purple button"
-        />
-      </View>
-    );
-  }
-
   render() {
+    if (this.state.loading) {
+      return (<LinearGradient
+        colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
+        style={styles.gradient}
+      >
+      <Spinner />
+      </LinearGradient>);
+    }
     return (
         <LinearGradient
           colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
@@ -76,8 +68,14 @@ export default class Login extends React.Component {
                 placeholder='password'
                 secureTextEntry
               />
-              <View>
-                {this.renderButton()}
+
+              <View style={styles.button}>
+                <Button
+                  onPress={this.onButtonPress.bind(this)}
+                  title="LOGIN"
+                  color="white"
+                  accessibilityLabel="Learn more about this purple button"
+                />
               </View>
               <Text style={styles.error}>{this.state.error}</Text>
             </View>
