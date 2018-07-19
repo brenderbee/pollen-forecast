@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import SvgUri from 'react-native-svg-uri';
 
-class Header extends Component {
+export default class Header extends Component {
   state = {
     fontLoaded: false,
   }
@@ -52,8 +52,6 @@ const styles = StyleSheet.create({
   logo: {
     fontFamily: 'Yellowtail-Regular',
     color: '#7d31e9',
-    fontSize: 22,
+    fontSize: 22
   }
 });
-
-export default Header;
