@@ -1,18 +1,17 @@
 import React from 'react';
-import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
 import { LinearGradient } from 'expo';
-import { Input } from './../common';
+import firebase from 'firebase';
+import { Input, Spinner } from './../common';
 
 export default class Login extends React.Component {
   state = {
     fontLoaded: false,
     email: '',
-    password: ''
+    password: '',
+    error: '',
+    loading: false
   }
-
-  pressLogin = () => {
-    alert('you pressed login');
-  };
 
   async componentWillMount() {
     await Expo.Font.loadAsync({
@@ -21,12 +20,45 @@ export default class Login extends React.Component {
     this.setState({ fontLoaded: true });
   }
 
+  onButtonPress() {
+    const { email, password } = this.state;
+
+    this.setState({ error: '', loading: true });
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .catch(() => {
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+          .catch(() => {
+            this.setState({ error: 'Authentication failed.' });
+          });
+      });
+  }
+
+  renderButton() {
+    if (this.state.loading) {
+      return <Spinner size='small'/>
+    }
+
+    return (
+      <View style={styles.button}>
+        <Button
+          onPress={this.onButtonPress.bind(this)}
+          title="LOGIN"
+          color="white"
+          accessibilityLabel="Learn more about this purple button"
+        />
+      </View>
+    );
+  }
+
   render() {
     return (
         <LinearGradient
           colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
-          style={styles.gradient}>
+          style={styles.gradient}
+        >
           <View style={styles.wrapper}>
+
             <View style={styles.hero}>
               {
                 this.state.fontLoaded ? (
@@ -36,22 +68,18 @@ export default class Login extends React.Component {
               <Input
                 value={this.state.email}
                 onChangeText={(email) => this.setState({ email })}
-                placeholder='user@email.com'
+                placeholder='user@gmail.com'
               />
               <Input
                 value={this.state.password}
                 onChangeText={(password) => this.setState({ password })}
                 placeholder='password'
-                secureTextEntry={true}
+                secureTextEntry
               />
-              <View style={styles.button}>
-                <Button
-                  onPress={this.pressLogin}
-                  title="LOGIN"
-                  color="white"
-                  accessibilityLabel="Learn more about this purple button"
-                />
+              <View>
+                {this.renderButton()}
               </View>
+              <Text style={styles.error}>{this.state.error}</Text>
             </View>
             <View>
               <Text style={styles.signup}>Not a member? <Text style={styles.signup2}>Sign up!</Text></Text>
@@ -97,5 +125,11 @@ const styles = StyleSheet.create({
   },
   signup2: {
     fontWeight: 'bold'
+  },
+  error: {
+    marginTop: 20,
+    fontSize: 14,
+    color: 'red',
+    textAlign: 'center'
   }
 });
