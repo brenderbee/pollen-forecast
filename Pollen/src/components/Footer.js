@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import SvgUri from 'react-native-svg-uri';
+import firebase from 'firebase';
 
 export default function Footer() {
   return(
@@ -14,8 +15,10 @@ export default function Footer() {
         <Text style={styles.text}>profile</Text>
       </View>
       <View style={styles.content}>
-        <SvgUri width="23" height="23" margin-bottom="16" source={require('./../../assets/img/sign-out-alt-solid.svg')} />
-        <Text style={styles.text}>logout</Text>
+        <TouchableOpacity onPress={() => firebase.auth().signOut()}>
+          <SvgUri width="23" height="23" margin-bottom="16" source={require('./../../assets/img/sign-out-alt-solid.svg')} />
+          <Text style={styles.text}>logout</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
