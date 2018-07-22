@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import firebase from 'firebase';
+import { LinearGradient } from 'expo';
 import Footer from './src/components/Footer';
 import Main from './src/components/Main';
 import Header from './src/components/Header';
 import Login from './src/components/Login';
 import { masterFirebaseConfig } from './api-keys';
+import { Spinner } from './src/common';
 
 const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -18,7 +20,7 @@ const firebaseConfig = {
 
 export default class App extends React.Component {
   state = {
-    loggedIn: false
+    loggedIn: null
   }
 
   componentWillMount() {
@@ -34,19 +36,29 @@ export default class App extends React.Component {
   }
 
   renderContent() {
-    if (this.state.loggedIn) {
-      return (
-        <View style={styles.container}>
-          <Header />
-          <Main />
-          <Footer />
-        </View>
-      );
-    }
+    switch (this.state.loggedIn) {
+      case true:
+        return (
+          <View style={styles.container}>
+            <Header />
+            <Main />
+            <Footer />
+          </View>
+        );
 
-    return (
-      <Login />
-    );
+      case false:
+        return (<Login />);
+
+      default:
+        return (
+          <LinearGradient
+            colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
+            style={styles.gradient}
+          >
+            <Spinner />
+          </LinearGradient>
+        );
+    }
   }
 
   render() {
@@ -60,6 +72,9 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  gradient: {
+    flex: 1
+  },
   container: {
     flex: 1,
     justifyContent: 'space-between',

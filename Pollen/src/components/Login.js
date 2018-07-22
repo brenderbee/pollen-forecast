@@ -13,6 +13,7 @@ export default class Login extends React.Component {
     loading: false
   }
 
+
   async componentWillMount() {
     await Expo.Font.loadAsync({
       'Yellowtail-Regular': require('./../../assets/fonts/Yellowtail-Regular.ttf'),
