@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default class PollenSummary extends Component {
   state = {
@@ -17,7 +17,7 @@ export default class PollenSummary extends Component {
 
         <View style={styles.mainPollenWrapper}>
           <View style={styles.mainPollen}>
-            <Image source={require('./../../assets/img/weed.png')} style={{height: 75, width: 50}} />
+              <Image source={require('./../../assets/img/weed.png')} style={{ height: 75, width: 50 }} />
           </View>
         </View>
 

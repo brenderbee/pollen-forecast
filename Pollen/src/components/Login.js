@@ -26,23 +26,37 @@ export default class Login extends React.Component {
     this.setState({ error: '', loading: true });
 
     firebase.auth().signInWithEmailAndPassword(email, password)
-      .then()
+      .then(this.onLoginSuccess.bind(this))
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
-          .catch(() => {
-            this.setState({ error: 'Authentication failed.' });
-          });
+          .then(this.onLoginSuccess.bind(this))
+          .catch(this.onLoginFail.bind(this));
       });
+  }
+
+  onLoginFail() {
+    this.setState({ error: 'Authentication failed.', loading: false });
+  }
+
+  onLoginSuccess() {
+    this.setState({
+      email: '',
+      password: '',
+      loading: false,
+      error: ''
+    });
   }
 
   render() {
     if (this.state.loading) {
-      return (<LinearGradient
-        colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
-        style={styles.gradient}
-      >
-      <Spinner />
-      </LinearGradient>);
+      return (
+        <LinearGradient
+          colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
+          style={styles.gradient}
+        >
+          <Spinner />
+        </LinearGradient>)
+      ;
     }
     return (
         <LinearGradient
