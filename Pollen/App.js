@@ -18,15 +18,23 @@ const firebaseConfig = {
 
 export default class App extends React.Component {
   state = {
-    login: false
+    loggedIn: false
   }
 
   componentWillMount() {
     firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ loggedIn: true });
+      } else {
+        this.setState({ loggedIn: false });
+      }
+    });
   }
 
   render() {
-    if (!this.state.login) {
+    if (!this.state.loggedIn) {
       return (
         <Login />
       );
