@@ -33,12 +33,8 @@ export default class App extends React.Component {
     });
   }
 
-  render() {
-    if (!this.state.loggedIn) {
-      return (
-        <Login />
-      );
-    } else {
+  renderContent() {
+    if (this.state.loggedIn) {
       return (
         <View style={styles.container}>
           <Header />
@@ -47,7 +43,20 @@ export default class App extends React.Component {
         </View>
       );
     }
+
+    return (
+      <Login />
+    );
   }
+
+  render() {
+      return (
+        <View style={styles.container}>
+          {this.renderContent()}
+        </View>
+      );
+    }
+
 }
 
 const styles = StyleSheet.create({
