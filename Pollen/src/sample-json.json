@@ -1,0 +1,112 @@
+{
+  "1":  [{
+    "weeks": {
+      "2018-07-09": [
+        {
+          "2018-07-09": {
+            "pollen": {
+              "tree": 5,
+              "grass": 0,
+              "weed": 3,
+              "mold": 0
+            },
+            "user": {
+              "symptoms": 5,
+              "location": "98660",
+            }
+          }
+        },
+
+        {
+          "2018-07-10": {
+            "pollen": {
+              "tree": 1,
+              "grass": 0,
+              "weed": 3,
+              "mold": 0
+            },
+            "user": {
+              "symptoms": 2,
+              "location": "98660",
+            }
+          }
+        },
+
+        {
+          "2018-07-11": {
+              "pollen": {
+                "tree": 3,
+                "grass": 0,
+                "weed": 2,
+                "mold": 0
+              },
+              "user": {
+                "symptoms": 3,
+                "location": "98660",
+              }
+            }
+        },
+
+        {
+          "2018-07-12": {
+            "pollen": {
+              "tree": 3,
+              "grass": 2,
+              "weed": 3,
+              "mold": 0
+            },
+            "user": {
+              "symptoms": 3,
+              "location": "98660",
+            }
+          }
+        },
+
+        {
+          "2018-07-13": {
+            "pollen": {
+              "tree": 4,
+              "grass": 2,
+              "weed": 3,
+              "mold": 0
+            },
+            "user": {
+              "symptoms": 4,
+              "location": "98660",
+            }
+          }
+        },
+
+        {
+          "2018-07-14": {
+            "pollen": {
+              "tree": 4,
+              "grass": 2,
+              "weed": 3,
+              "mold": 0
+            },
+            "user": {
+              "symptoms": 4,
+              "location": "98660",
+            }
+          }
+        },
+
+        {
+          "2018-07-15": {
+            "pollen": {
+              "tree": 4,
+              "grass": 3,
+              "weed": 3,
+              "mold": 0
+            },
+            "user": {
+              "symptoms": 5,
+              "location": "98660",
+            }
+          }
+        }
+      ]
+    }
+  }]
+}
