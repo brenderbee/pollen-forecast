@@ -8,6 +8,7 @@ import Header from './src/components/Header';
 import Login from './src/components/Login';
 import { masterFirebaseConfig } from './api-keys';
 import { Spinner } from './src/common';
+import History from './src/components/History'
 
 const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -41,7 +42,7 @@ export default class App extends React.Component {
         return (
           <View style={styles.container}>
             <Header />
-            <Main />
+            <History />
             <Footer />
           </View>
         );
