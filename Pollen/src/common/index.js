@@ -1,4 +1,5 @@
 export * from './Input';
 export * from './Spinner';
-export * from './PollenProgressCircle';
+export * from './PollenProgressCircleLarge';
+export * from './PollenProgressCircleSmall';
 export * from './Gradient';

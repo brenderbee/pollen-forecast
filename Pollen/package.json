@@ -27,6 +27,7 @@
     "react-d3-basic": "^1.6.11",
     "react-native": "~0.55.2",
     "react-native-chart": "^1.0.8-beta",
+    "react-native-circular-progress": "^1.0.0",
     "react-native-d3multiline-chart": "^1.0.18",
     "react-native-elements": "^0.19.1",
     "react-native-indicators": "^0.13.0",

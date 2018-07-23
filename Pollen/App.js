@@ -36,6 +36,14 @@ export default class App extends React.Component {
     });
   }
 
+  async componentDidMount() {
+    await Expo.Font.loadAsync({
+      'Yellowtail-Regular': require('./assets/fonts/Yellowtail-Regular.ttf'),
+    });
+
+    this.setState({ fontLoaded: true });
+  }
+
   renderContent() {
     switch (this.state.loggedIn) {
       case true:
