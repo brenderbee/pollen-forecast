@@ -32,7 +32,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#f0f1f5',
     borderTopColor: '#c4c4c7',
     borderStyle: 'solid',
-    borderWidth: 1
+    borderTopWidth: 1,
+    elevation: 2,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0
 
   },
   text: {
