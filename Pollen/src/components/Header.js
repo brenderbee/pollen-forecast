@@ -47,7 +47,9 @@ const styles = StyleSheet.create({
     paddingTop: 44,
     paddingBottom: 5,
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
+    elevation: 2,
+    position: 'relative'
   },
   logo: {
     fontFamily: 'Yellowtail-Regular',
