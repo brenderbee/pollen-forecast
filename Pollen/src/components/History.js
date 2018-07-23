@@ -12,7 +12,7 @@ export default function History() {
       <LinearGradient
         colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
         style={styles.gradient}
-      >
+        >
         <View style={styles.historyStylesChart}>
           <HistoryChart />
         </View>
