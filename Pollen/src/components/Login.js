@@ -56,8 +56,8 @@ export default class Login extends React.Component {
           style={styles.gradient}
         >
           <Spinner />
-        </LinearGradient>)
-      ;
+        </LinearGradient>
+      );
     }
     return (
         <LinearGradient
