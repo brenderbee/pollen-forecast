@@ -14,6 +14,8 @@ function PollenProgressCircleLarge({ progress, source, name }) {
         tintColor='#7d31e9'
         onAnimationComplete={() => console.log('onAnimationComplete')}
         backgroundColor='#D3D4D6'
+        duration={1000}
+        lineCap='round'
       />
     <View style={styles.imageWrapper}>
       <Image source={source} style={styles.imageStyle} />
