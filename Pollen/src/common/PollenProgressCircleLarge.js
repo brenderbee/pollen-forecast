@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
-function PollenProgressCircleLarge({ progress, src, name }) {
+function PollenProgressCircleLarge({ progress, source, name }) {
   return (
     <View style={styles.progressCircleStyles}>
       <AnimatedCircularProgress
@@ -15,7 +15,9 @@ function PollenProgressCircleLarge({ progress, src, name }) {
         onAnimationComplete={() => console.log('onAnimationComplete')}
         backgroundColor='#D3D4D6'
       />
-      <Image src={src} />
+    <View style={styles.imageWrapper}>
+      <Image source={source} style={styles.imageStyle} />
+    </View>
       <Text style={styles.pollenTitleStyle}>{name}</Text>
     </View>
   );
@@ -29,6 +31,20 @@ const styles = StyleSheet.create({
   pollenTitleStyle: {
     textAlign: 'center',
     fontSize: 16
+  },
+  imageWrapper: {
+    zIndex: 5,
+    height: 125,
+    width: 125,
+    position: 'absolute'
+  },
+  imageStyle: {
+    height: 75,
+    width: 48,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 'auto',
+    marginBottom: 'auto',
   }
 });
 

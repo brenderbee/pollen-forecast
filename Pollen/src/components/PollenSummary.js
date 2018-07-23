@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { PollenProgressCircleLarge, PollenProgressCircleSmall } from './../common';
 
 export default class PollenSummary extends Component {
@@ -18,8 +18,9 @@ export default class PollenSummary extends Component {
 
         <View style={styles.mainPollenWrapper}>
           <PollenProgressCircleLarge
-            progress={4/5}
+            progress={4 / 5}
             name='weed'
+            source={require('./../../assets/img/weed.png')}
           />
         </View>
 
@@ -27,22 +28,25 @@ export default class PollenSummary extends Component {
 
           <View style={styles.miniPollen}>
             <PollenProgressCircleSmall
-              progress={2/5}
+              progress={2 / 5}
               name='tree'
+              source={require('./../../assets/img/tree.png')}
             />
           </View>
 
           <View style={styles.miniPollen}>
             <PollenProgressCircleSmall
-              progress={1/5}
+              progress={1 / 5}
               name='grass'
+              source={require('./../../assets/img/grass.png')}
             />
           </View>
 
           <View style={styles.miniPollen}>
             <PollenProgressCircleSmall
-              progress={0/5}
+              progress={0 / 5}
               name='mold'
+              source={require('./../../assets/img/mold.png')}
             />
           </View>
 
@@ -78,6 +82,7 @@ const styles = StyleSheet.create({
   miniPollenWrapper: {
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginBottom: 20
   },
   miniPollen: {
     justifyContent: 'center',

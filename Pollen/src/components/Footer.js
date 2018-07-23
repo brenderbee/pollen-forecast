@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
     borderTopColor: '#c4c4c7',
     borderStyle: 'solid',
     borderTopWidth: 1,
-    elevation: 2,
     position: 'absolute',
     bottom: 0,
     left: 0,
