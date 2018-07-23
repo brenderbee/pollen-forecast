@@ -46,7 +46,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: '#D3D4D6',
     height: '75%',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    flex: 1
   },
   mainPollenWrapper: {
 
@@ -79,7 +81,8 @@ const styles = StyleSheet.create({
   },
   header: {
     marginLeft: 'auto',
-    marginRight: 'auto'
+    marginRight: 'auto',
+    marginTop: 20
   },
   location: {
     textAlign: 'center',

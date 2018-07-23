@@ -6,14 +6,18 @@ import TrackerList from './TrackerList';
 
 export default class Main extends Component {
   state = {
-    
+
   }
 
   render() {
     return (
       <View style={styles.main}>
-        <PollenSummary />
-        <TrackerList />
+        <View  style={{ flex: 2}}>
+          <PollenSummary />
+        </View>
+        <View style={{ flex: 1}}>
+          <TrackerList />
+        </View>
       </View>
     );
   }
@@ -21,6 +25,8 @@ export default class Main extends Component {
 
 const styles = StyleSheet.create({
   main: {
-    marginTop: 0
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center'
   }
 });

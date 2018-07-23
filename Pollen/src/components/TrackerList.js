@@ -23,12 +23,12 @@ export default class TrackerList extends Component {
 
 const styles = StyleSheet.create({
   wrapper: {
-    flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    flex: 1,
+    marginBottom: 80
   },
   content: {
-  
     width: '50%',
     justifyContent: 'center',
     alignItems: 'center',

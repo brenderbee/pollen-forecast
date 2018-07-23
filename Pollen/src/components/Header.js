@@ -44,12 +44,15 @@ const styles = StyleSheet.create({
     borderColor: '#e8e9ec',
     borderStyle: 'solid',
     borderBottomWidth: 1,
-    paddingTop: 44,
+    paddingTop: 45,
     paddingBottom: 5,
     paddingLeft: 20,
     paddingRight: 20,
     elevation: 2,
-    position: 'relative'
+    position: 'relative',
+    top: 0,
+    left: 0,
+    right: 0
   },
   logo: {
     fontFamily: 'Yellowtail-Regular',
