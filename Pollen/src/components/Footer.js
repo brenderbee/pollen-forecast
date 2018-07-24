@@ -7,22 +7,37 @@ export default function Footer() {
   return(
     <View style={styles.footer}>
       <View style={styles.content}>
-        <SvgUri width="23" height="23" margin-bottom="16" source={require('./../../assets/img/chart-bar-regular.svg')} />
+        <SvgUri
+          width='23'
+          height='23'
+          margin-bottom='16'
+          source={require('./../../assets/img/chart-bar-regular.svg')}
+        />
         <Text style={styles.text}>history</Text>
       </View>
       <View style={styles.content}>
-        <SvgUri width="23" height="23" margin-bottom="16" source={require('./../../assets/img/user-regular.svg')} />
+        <SvgUri
+          width='23'
+          height='23'
+          margin-bottom='16'
+          source={require('./../../assets/img/user-regular.svg')}
+        />
         <Text style={styles.text}>profile</Text>
       </View>
-      <View style={styles.content}>
-        <TouchableOpacity onPress={() => firebase.auth().signOut()}>
-          <SvgUri width="23" height="23" margin-bottom="16" source={require('./../../assets/img/sign-out-alt-solid.svg')} />
-          <Text style={styles.text}>logout</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity onPress={() => firebase.auth().signOut()}>
+        <View style={styles.content}>
+          <SvgUri
+              width='23'
+              height='23'
+              margin-bottom='16'
+              source={require('./../../assets/img/sign-out-alt-solid.svg')}
+          />
+            <Text style={styles.text}>logout</Text>
+        </View>
+    </TouchableOpacity>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   footer: {
@@ -33,7 +48,7 @@ const styles = StyleSheet.create({
     borderTopColor: '#c4c4c7',
     borderStyle: 'solid',
     borderTopWidth: 1,
-    // position: 'absolute',
+    position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0

@@ -50,7 +50,7 @@ export default class App extends React.Component {
         return (
           <View style={styles.container}>
             <Header />
-            <History />
+            <Main />
             <Footer />
           </View>
         );
