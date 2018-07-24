@@ -11,7 +11,7 @@ export default class TrackerList extends Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.content}>
-
+          <Text>tracker</Text>
         </View>
         <View style={styles.contentLeft}>
           <PredictTracker />

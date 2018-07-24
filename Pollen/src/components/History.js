@@ -6,13 +6,12 @@ import HistoryList from './HistoryList';
 
 
 export default function History() {
-
   return (
-    <View style={styles.historyStyles}>
+    <View style={styles.historyStyle}>
       <LinearGradient
         colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
         style={styles.gradient}
-        >
+      >
         <View style={styles.historyStylesChart}>
           <HistoryChart />
         </View>
@@ -23,12 +22,11 @@ export default function History() {
       </View>
     </View>
   );
-
 }
 
 const styles = StyleSheet.create({
-  historyStyles: {
-
+  historyStyle: {
+    marginBottom: 100
   },
   historyLabelStyle: {
     textAlign: 'center',

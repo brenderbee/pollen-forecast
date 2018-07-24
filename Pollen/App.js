@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import firebase from 'firebase';
-import { LinearGradient } from 'expo';
+import { LinearGradient, Font } from 'expo';
 import Footer from './src/components/Footer';
 import Main from './src/components/Main';
 import Header from './src/components/Header';
 import Login from './src/components/Login';
 import { masterFirebaseConfig } from './api-keys';
 import { Spinner } from './src/common';
-import History from './src/components/History'
+import History from './src/components/History';
 
 const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -37,7 +37,7 @@ export default class App extends React.Component {
   }
 
   async componentDidMount() {
-    await Expo.Font.loadAsync({
+    await Font.loadAsync({
       'Yellowtail-Regular': require('./assets/fonts/Yellowtail-Regular.ttf'),
     });
 
@@ -50,14 +50,12 @@ export default class App extends React.Component {
         return (
           <View style={styles.container}>
             <Header />
-            <Main />
+            <History />
             <Footer />
           </View>
         );
-
       case false:
         return (<Login />);
-
       default:
         return (
           <LinearGradient
