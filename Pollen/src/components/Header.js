@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import SvgUri from 'react-native-svg-uri';
 
 export default class Header extends Component {
@@ -10,6 +10,7 @@ export default class Header extends Component {
     await Expo.Font.loadAsync({
       'Yellowtail-Regular': require('./../../assets/fonts/Yellowtail-Regular.ttf'),
     });
+
     this.setState({ fontLoaded: true });
   }
 
@@ -47,11 +48,7 @@ const styles = StyleSheet.create({
     paddingTop: 45,
     paddingBottom: 5,
     paddingLeft: 20,
-    paddingRight: 20,
-    position: 'relative',
-    top: 0,
-    left: 0,
-    right: 0
+    paddingRight: 20
   },
   logo: {
     fontFamily: 'Yellowtail-Regular',

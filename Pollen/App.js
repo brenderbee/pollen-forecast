@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
   container: {
-    flex: 1,
-    justifyContent: 'space-between',
+    flex: 1
   }
 });

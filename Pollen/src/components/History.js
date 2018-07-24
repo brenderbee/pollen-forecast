@@ -26,7 +26,7 @@ export default function History() {
 
 const styles = StyleSheet.create({
   historyStyle: {
-    marginBottom: 100
+    
   },
   historyLabelStyle: {
     textAlign: 'center',

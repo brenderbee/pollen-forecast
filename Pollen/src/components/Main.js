@@ -1,18 +1,14 @@
 import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import PollenSummary from './PollenSummary';
 import TrackerList from './TrackerList';
 
-
 export default class Main extends Component {
-  state = {
-
-  }
 
   render() {
     return (
       <View style={styles.main}>
-        <View  style={{ flex: 2}}>
+        <View style={{ flex: 2}}>
           <PollenSummary />
         </View>
         <View style={{ flex: 1}}>
