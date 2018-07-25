@@ -3,7 +3,7 @@ import { Text, View, StyleSheet, Button } from 'react-native';
 import { LinearGradient } from 'expo';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
-import { Input, Spinner } from './../common';
+import { Input, Spinner, AppButton } from './../common';
 
 export default class Login extends Component {
   constructor(props) {
@@ -27,6 +27,10 @@ export default class Login extends Component {
       'Yellowtail-Regular': require('./../../assets/fonts/Yellowtail-Regular.ttf'),
     });
     this.setState({ fontLoaded: true });
+  }
+
+  componentWillUnmount() {
+
   }
 
 
@@ -95,14 +99,15 @@ export default class Login extends Component {
                 secureTextEntry
               />
 
-              <View style={styles.button}>
-                <Button
+              <View style={styles.buttonWrapper}>
+                <AppButton
                   onPress={this.onButtonPress}
-                  title="LOGIN"
-                  color="white"
-                  accessibilityLabel="Learn more about this purple button"
+                  title='LOGIN'
+                  color='white'
+                  backgroundColor='#7d31e9'
                 />
               </View>
+
               <Text style={styles.error}>{this.state.error}</Text>
             </View>
             <View>
@@ -133,14 +138,11 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 40
   },
-  button: {
+  buttonWrapper: {
     marginLeft: 'auto',
     marginRight: 'auto',
     justifyContent: 'center',
-    width: '75%',
-    borderRadius: 2,
-    height: 55,
-    backgroundColor: '#7d31e9'
+    width: '75%'
   },
   signup: {
     color: '#2A2A2A',
