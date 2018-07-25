@@ -2,15 +2,15 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo';
 import SvgUri from 'react-native-svg-uri';
+import { Actions } from 'react-native-router-flux';
 import HistoryChart from './HistoryChart';
 import HistoryList from './HistoryList';
-import HistoryModal from './HistoryModal';
 
 export default function History() {
 
   onExpandPress = () => {
     return (
-      console.log('expand pressed')
+      console.log('expand')
     );
   }
 
@@ -21,7 +21,7 @@ export default function History() {
         style={styles.gradient}
       >
         <View style={styles.expandSVG}>
-          <TouchableOpacity style={styles.expandSVGButton} onPress={onExpandPress}>
+          <TouchableOpacity style={styles.expandSVGButton} onPress={(onExpandPress)}>
             <SvgUri
               width="16"
               height="16"
@@ -67,9 +67,3 @@ const styles = StyleSheet.create({
     height: '70%'
   }
 });
-
-
-
-// <View>
-//   <HistoryModal />
-// </View>

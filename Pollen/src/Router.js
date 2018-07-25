@@ -5,6 +5,7 @@ import { Font } from 'expo';
 import Login from './components/Login';
 import Main from './components/Main';
 import History from './components/History';
+import HistoryModal from './components/HistoryModal';
 
 export default class RouterComponent extends Component {
   constructor(props) {
@@ -24,17 +25,14 @@ export default class RouterComponent extends Component {
   render() {
     return (
       <Router>
-        <Scene key='root' hideNavBar={true} navigationBarStyle={styles.header} headerTitleStyle={styles.title}>
+        <Scene key='root' hideNavBar navigationBarStyle={styles.header} headerTitleStyle={styles.title}>
           <Scene key='auth'>
-            <Scene key='login' component={Login} title='Please Login' hideNavBar={true} initial />
+            <Scene key='login' component={Login} title='Please Login' hideNavBar initial />
           </Scene>
           <Scene key='main'>
             <Scene key='summary' component={Main} title='Main' />
-            <Scene
-              key='history'
-              component={History}
-              title='History'
-              />
+            <Scene key='history' component={History} title='History' />
+            <Scene key='modal' component={HistoryModal} title='Modal' hideNavBar direction='vertical' />
           </Scene>
         </Scene>
       </Router>
