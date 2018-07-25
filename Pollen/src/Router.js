@@ -6,9 +6,13 @@ import Main from './components/Main';
 export default function RouterComponent() {
   return (
     <Router>
-      <Scene key='root'>
-        <Scene key='login' component={Login} title='Please Login' hideNavBar={true} initial />
-        <Scene key='main' component={Main} title='Pollen' />
+      <Scene key='root' hideNavBar={true}>
+        <Scene key='auth'>
+          <Scene key='login' component={Login} title='Please Login' hideNavBar={true} initial />
+        </Scene>
+        <Scene key='main'>
+          <Scene key='mainSummary' component={Main} title='Pollen' />
+        </Scene>
       </Scene>
     </Router>
   );
