@@ -1,20 +1,29 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import SvgUri from 'react-native-svg-uri';
+import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 
 export default function Footer() {
+
+  function onPressLogout() {
+    firebase.auth().signOut();
+    Actions.auth();
+  }
+
   return (
     <View style={styles.footer}>
-      <View style={styles.content}>
-        <SvgUri
-          width='23'
-          height='23'
-          margin-bottom='16'
-          source={require('./../../assets/img/chart-bar-regular.svg')}
-        />
-        <Text style={styles.text}>history</Text>
-      </View>
+      <TouchableOpacity onPress={() => Actions.history()}>
+        <View style={styles.content}>
+          <SvgUri
+            width='23'
+            height='23'
+            margin-bottom='16'
+            source={require('./../../assets/img/chart-bar-regular.svg')}
+          />
+          <Text style={styles.text}>history</Text>
+        </View>
+      </TouchableOpacity>
       <View style={styles.content}>
         <SvgUri
           width='23'
@@ -24,7 +33,7 @@ export default function Footer() {
         />
         <Text style={styles.text}>profile</Text>
       </View>
-      <TouchableOpacity onPress={() => firebase.auth().signOut()}>
+      <TouchableOpacity onPress={onPressLogout}>
         <View style={styles.content}>
           <SvgUri
               width='23'
