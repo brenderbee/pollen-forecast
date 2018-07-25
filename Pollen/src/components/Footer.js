@@ -4,7 +4,7 @@ import SvgUri from 'react-native-svg-uri';
 import firebase from 'firebase';
 
 export default function Footer() {
-  return(
+  return (
     <View style={styles.footer}>
       <View style={styles.content}>
         <SvgUri

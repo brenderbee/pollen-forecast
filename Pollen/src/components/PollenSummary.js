@@ -1,56 +1,62 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-native';
 import { PollenProgressCircleLarge, PollenProgressCircleSmall } from './../common';
 
 export default class PollenSummary extends Component {
-  state = {
-
+  GetPollenItem = () => {
+    Alert.alert('temp');
   }
 
   render() {
     return (
       <View style={styles.wrapper}>
-
         <View style={styles.header}>
           <Text style={styles.location}>Portland, OR</Text>
           <Text style={styles.day}>Today</Text>
         </View>
 
-        <View style={styles.mainPollenWrapper}>
-          <PollenProgressCircleLarge
-            progress={4 / 5}
-            name='weed'
-            source={require('./../../assets/img/weed.png')}
-          />
-        </View>
+        <TouchableOpacity onPress={this.GetPollenItem.bind(this)}>
+          <View style={styles.mainPollenWrapper}>
+            <PollenProgressCircleLarge
+              progress={4 / 5}
+              name='weed'
+              source={require('./../../assets/img/weed.png')}
+              />
+          </View>
+        </TouchableOpacity>
 
         <View style={styles.miniPollenWrapper}>
+          <TouchableOpacity onPress={this.GetPollenItem.bind(this)}>
+            <View style={styles.miniPollen}>
+              <PollenProgressCircleSmall
+                progress={2 / 5}
+                name='tree'
+                source={require('./../../assets/img/tree.png')}
+              />
+            </View>
+          </TouchableOpacity>
 
-          <View style={styles.miniPollen}>
-            <PollenProgressCircleSmall
-              progress={2 / 5}
-              name='tree'
-              source={require('./../../assets/img/tree.png')}
-            />
-          </View>
+          <TouchableOpacity onPress={this.GetPollenItem.bind(this)}>
+            <View style={styles.miniPollen}>
+              <PollenProgressCircleSmall
+                progress={1 / 5}
+                name='grass'
+                source={require('./../../assets/img/grass.png')}
+              />
+            </View>
+          </TouchableOpacity>
 
-          <View style={styles.miniPollen}>
-            <PollenProgressCircleSmall
-              progress={1 / 5}
-              name='grass'
-              source={require('./../../assets/img/grass.png')}
-            />
-          </View>
-
-          <View style={styles.miniPollen}>
-            <PollenProgressCircleSmall
-              progress={0 / 5}
-              name='mold'
-              source={require('./../../assets/img/mold.png')}
-            />
-          </View>
-
+          <TouchableOpacity onPress={this.GetPollenItem.bind(this)}>
+            <View style={styles.miniPollen}>
+              <PollenProgressCircleSmall
+                progress={0 / 5}
+                name='mold'
+                source={require('./../../assets/img/mold.png')}
+              />
+            </View>
+          </TouchableOpacity>
         </View>
+
       </View>
     );
   }
