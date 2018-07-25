@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import { LineChart, YAxis, Grid, XAxis } from 'react-native-svg-charts';
 import { View, Text, StyleSheet } from 'react-native';
 
-export default class HistoryChart extends React.PureComponent {
+export default class HistoryChart extends PureComponent {
 
   render() {
     const data = [5, 2, 3, 3, 4, 4, null];
@@ -28,7 +28,6 @@ export default class HistoryChart extends React.PureComponent {
           />
           <LineChart
             numberOfTicks={5}
-            animationDuration={3000}
             gridMin={0}
             style={{ flex: 1, marginLeft: 20, marginRight: 20 }}
             data={data}
@@ -46,12 +45,12 @@ export default class HistoryChart extends React.PureComponent {
 const styles = StyleSheet.create({
   historyChart: {
     marginLeft: 16,
-    marginRight: 16
+    marginRight: 16,
+    flexDirection: 'column'
   },
   historyHeader: {
     marginLeft: 'auto',
-    marginRight: 'auto',
-    marginTop: 16
+    marginRight: 'auto'
   },
   historyHeaderText: {
     textAlign: 'center',
@@ -59,7 +58,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   chartWrapper: {
-    height: 200,
+    height: '85%',
     flexDirection: 'row'
   }
 });
