@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import { LinearGradient } from 'expo';
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 import { Input, Spinner } from './../common';
 
 export default class Login extends React.Component {
@@ -39,6 +40,8 @@ export default class Login extends React.Component {
       loading: false,
       error: ''
     });
+
+    Actions.main();
   }
 
   onButtonPress() {
