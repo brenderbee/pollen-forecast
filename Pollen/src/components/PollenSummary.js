@@ -15,6 +15,7 @@ export default class PollenSummary extends Component {
   }
 
   render() {
+        const { checked } = this.state;
     return (
       <View style={styles.wrapper}>
         <View style={styles.header}>

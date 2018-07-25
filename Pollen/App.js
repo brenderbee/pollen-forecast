@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, View } from 'react-native';
 import firebase from 'firebase';
 import { LinearGradient, Font } from 'expo';
 import { masterFirebaseConfig } from './api-keys';
 import { Spinner } from './src/common';
-import History from './src/components/History';
 import Footer from './src/components/Footer';
 import Router from './src/Router';
 
@@ -17,7 +16,7 @@ const firebaseConfig = {
   messagingSenderId: masterFirebaseConfig.messagingSenderId
 };
 
-export default class App extends React.Component {
+export default class App extends Component {
   state = {
     loggedIn: null
   }

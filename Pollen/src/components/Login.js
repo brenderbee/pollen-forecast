@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text, View, StyleSheet, Button } from 'react-native';
 import { LinearGradient } from 'expo';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import { Input, Spinner } from './../common';
 
-export default class Login extends React.Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,7 +13,8 @@ export default class Login extends React.Component {
       email: '',
       password: '',
       error: '',
-      loading: false
+      loading: false,
+      checked: false
     };
     this.onLoginSuccess = this.onLoginSuccess.bind(this);
     this.onLoginFail = this.onLoginFail.bind(this);
@@ -38,7 +39,7 @@ export default class Login extends React.Component {
       email: '',
       password: '',
       loading: false,
-      error: ''
+      error: '',
     });
 
     Actions.main();
@@ -59,6 +60,7 @@ export default class Login extends React.Component {
   }
 
   render() {
+        const { checked } = this.state;
     if (this.state.loading) {
       return (
         <LinearGradient
@@ -75,7 +77,6 @@ export default class Login extends React.Component {
           style={styles.gradient}
         >
           <View style={styles.wrapper}>
-
             <View style={styles.hero}>
               {
                 this.state.fontLoaded ? (

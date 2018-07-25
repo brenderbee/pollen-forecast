@@ -94,7 +94,7 @@ export default class HistoryList extends Component {
             return (<SectionHeader section={section} />);
           }}
           sections={sectionListData}
-          keyExtractor={(item, index) => item.title}
+          keyExtractor={(item, index) => item.date }
           ItemSeparatorComponent={this.renderSeparator}
         />
       </View>
