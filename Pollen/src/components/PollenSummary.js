@@ -3,7 +3,14 @@ import { StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-native';
 import { PollenProgressCircleLarge, PollenProgressCircleSmall } from './../common';
 
 export default class PollenSummary extends Component {
-  GetPollenItem = () => {
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+    this.getPollenItem = this.getPollenItem.bind(this);
+  }
+
+  getPollenItem = () => {
     Alert.alert('temp');
   }
 
@@ -15,7 +22,7 @@ export default class PollenSummary extends Component {
           <Text style={styles.day}>Today</Text>
         </View>
 
-        <TouchableOpacity onPress={this.GetPollenItem.bind(this)}>
+        <TouchableOpacity onPress={this.getPollenItem}>
           <View style={styles.mainPollenWrapper}>
             <PollenProgressCircleLarge
               progress={4 / 5}
@@ -26,7 +33,7 @@ export default class PollenSummary extends Component {
         </TouchableOpacity>
 
         <View style={styles.miniPollenWrapper}>
-          <TouchableOpacity onPress={this.GetPollenItem.bind(this)}>
+          <TouchableOpacity onPress={this.getPollenItem}>
             <View style={styles.miniPollen}>
               <PollenProgressCircleSmall
                 progress={2 / 5}
@@ -36,7 +43,7 @@ export default class PollenSummary extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={this.GetPollenItem.bind(this)}>
+          <TouchableOpacity onPress={this.getPollenItem}>
             <View style={styles.miniPollen}>
               <PollenProgressCircleSmall
                 progress={1 / 5}
@@ -46,7 +53,7 @@ export default class PollenSummary extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={this.GetPollenItem.bind(this)}>
+          <TouchableOpacity onPress={this.getPollenItem}>
             <View style={styles.miniPollen}>
               <PollenProgressCircleSmall
                 progress={0 / 5}

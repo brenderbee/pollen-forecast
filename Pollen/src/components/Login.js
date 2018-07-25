@@ -5,12 +5,18 @@ import firebase from 'firebase';
 import { Input, Spinner } from './../common';
 
 export default class Login extends React.Component {
-  state = {
-    fontLoaded: false,
-    email: '',
-    password: '',
-    error: '',
-    loading: false
+  constructor(props) {
+    super(props);
+    this.state = {
+      fontLoaded: false,
+      email: '',
+      password: '',
+      error: '',
+      loading: false
+    };
+    this.onLoginSuccess = this.onLoginSuccess.bind(this);
+    this.onLoginFail = this.onLoginFail.bind(this);
+    this.onButtonPress = this.onButtonPress.bind(this);
   }
 
 
@@ -21,19 +27,6 @@ export default class Login extends React.Component {
     this.setState({ fontLoaded: true });
   }
 
-  onButtonPress() {
-    const { email, password } = this.state;
-
-    this.setState({ error: '', loading: true });
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(this.onLoginSuccess.bind(this))
-      .catch(() => {
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then(this.onLoginSuccess.bind(this))
-          .catch(this.onLoginFail.bind(this));
-      });
-  }
 
   onLoginFail() {
     this.setState({ error: 'Authentication failed.', loading: false });
@@ -45,6 +38,20 @@ export default class Login extends React.Component {
       password: '',
       loading: false,
       error: ''
+    });
+  }
+
+  onButtonPress() {
+    const { email, password } = this.state;
+
+    this.setState({ error: '', loading: true });
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(this.onLoginSuccess)
+    .catch(() => {
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(this.onLoginSuccess)
+      .catch(this.onLoginFail);
     });
   }
 
@@ -86,7 +93,7 @@ export default class Login extends React.Component {
 
               <View style={styles.button}>
                 <Button
-                  onPress={this.onButtonPress.bind(this)}
+                  onPress={this.onButtonPress}
                   title="LOGIN"
                   color="white"
                   accessibilityLabel="Learn more about this purple button"
