@@ -10,7 +10,7 @@ export default function History() {
 
   onExpandPress = () => {
     return (
-      console.log('expand')
+      Actions.modal()
     );
   }
 

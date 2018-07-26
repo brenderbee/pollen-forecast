@@ -1,80 +1,101 @@
-import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo';
 import SvgUri from 'react-native-svg-uri';
+import { Actions } from 'react-native-router-flux';
 import HistoryChart from './HistoryChart';
 import { AppButton } from './../common';
 
-export default function HistoryModal() {
+export default class HistoryModal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeWeed: false,
+      activeTree: false,
+      activeGrass: false,
+      activeMold: false
+    };
+    this.onCompressPress = this.onCompressPress.bind(this);
+    this.onButtonPress = this.onButtonPress.bind(this);
+    this.renderButtonColor = this.renderButtonColor.bind(this);
+  }
 
-  onCompressPress = () => {
+
+  onCompressPress() {
     return (
-      console.log('compress pressed')
+      Actions.pop()
     );
   }
 
-  return (
-    <LinearGradient
-      colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
-      style={styles.gradient}
-    >
-      <View style={styles.modalWrapper}>
+  onButtonPress(item) {
+    Alert.alert(item);
+    // if (this.state.activeWeed) {
+    //   this.setState({ activeWeed: false });
+    // } else {
+    //   this.setState({ activeWeed: true });
+    // }
+  }
+
+  renderButtonColor() {
+    const grey = '#f8596a';
+    const pink = '#aeaeae'
+    if (this.state.activeWeed) {
+      return pink;
+    }
+    return grey;
+  }
+
+  render() {
+    const pollens = ['Weed', 'Tree', 'Grass', 'Mold'];
+    return (
+      <LinearGradient
+        colors={['rgba(120, 255, 214, 0.55)', 'rgba(168, 255, 120, 0.55)']}
+        style={styles.gradient}
+        >
+        <View style={styles.modalWrapper}>
           <View style={styles.compressSVG}>
-            <TouchableOpacity style={styles.compressSVGButton} onPress={onCompressPress}>
+            <TouchableOpacity style={styles.compressSVGButton} onPress={this.onCompressPress}>
               <SvgUri
                 width="16"
                 height="16"
                 source={require('./../../assets/img/compress.svg')}
-              />
+                />
             </TouchableOpacity>
           </View>
           <View style={styles.historyStylesChart}>
             <HistoryChart />
           </View>
-        <Text style={styles.historyLabelStyle}>symptoms over time</Text>
-      </View>
-      <View style={styles.mainButtonWrapper}>
-        <View style={styles.buttonWrapper}>
-          <AppButton
-            onPress={this.onButtonPress}
-            title='Weed'
-            color='white'
-            backgroundColor='#f8596a'
-          />
+          <Text style={styles.historyLabelStyle}>symptoms over time</Text>
         </View>
-        <View style={styles.buttonWrapper}>
-          <AppButton
-            onPress={this.onButtonPress}
-            title='Tree'
-            color='white'
-            backgroundColor='#aeaeae'
-          />
-        </View>
-        <View style={styles.buttonWrapper}>
-          <AppButton
-            onPress={this.onButtonPress}
-            title='Grass'
-            color='white'
-            backgroundColor='#aeaeae'
-          />
-        </View>
-        <View style={styles.buttonWrapper}>
-          <AppButton
-            onPress={this.onButtonPress}
-            title='Mold'
-            color='white'
-            backgroundColor='#aeaeae'
-          />
-        </View>
+        <View style={styles.mainButtonWrapper}>
 
-      </View>
-    </LinearGradient>
-  );
+          {
+            pollens.map((item, key)=>(
+              <View style={styles.buttonWrapper}>
+                <AppButton
+                  onPress={() => this.onButtonPress(item)}
+                  title={item}
+                  color='white'
+                  backgroundColor={this.renderButtonColor()}
+                  key={key}
+                />
+              </View>
+            )
+          )}
+
+        </View>
+      </LinearGradient>
+    );
+  }
+
 }
 
 const styles = StyleSheet.create({
+  modalWrapper: {
+    paddingTop: 44,
+  },
   gradient: {
-
+    flex: 1
   },
   compressSVG: {
     alignItems: 'flex-end'

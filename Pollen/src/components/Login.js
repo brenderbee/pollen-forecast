@@ -23,10 +23,13 @@ export default class Login extends Component {
 
 
   async componentWillMount() {
-    await Expo.Font.loadAsync({
-      'Yellowtail-Regular': require('./../../assets/fonts/Yellowtail-Regular.ttf'),
-    });
-    this.setState({ fontLoaded: true });
+    if (!this.state.fontLoaded) {
+      await Expo.Font.loadAsync({
+        'Yellowtail-Regular': require('./../../assets/fonts/Yellowtail-Regular.ttf'),
+      });
+
+      this.setState({ fontLoaded: true });
+    }
   }
 
   componentWillUnmount() {

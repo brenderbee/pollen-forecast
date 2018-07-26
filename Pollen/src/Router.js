@@ -27,13 +27,13 @@ export default class RouterComponent extends Component {
       <Router>
         <Scene key='root' hideNavBar navigationBarStyle={styles.header} headerTitleStyle={styles.title}>
           <Scene key='auth'>
-            <Scene key='login' component={Login} title='Please Login' hideNavBar initial />
+            <Scene key='login' component={Login} title='Please Login' hideNavBar />
           </Scene>
           <Scene key='main'>
             <Scene key='summary' component={Main} title='Main' />
             <Scene key='history' component={History} title='History' />
-            <Scene key='modal' component={HistoryModal} title='Modal' hideNavBar direction='vertical' />
           </Scene>
+          <Scene key='modal' component={HistoryModal} title='Modal' hideNavBar direction='vertical' initial />
         </Scene>
       </Router>
     );
