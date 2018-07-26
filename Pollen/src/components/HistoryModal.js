@@ -17,11 +17,13 @@ export default class HistoryModal extends Component {
       buttonWeed: '#aeaeae',
       buttonTree: '#aeaeae',
       buttonGrass: '#aeaeae',
+      buttonMold: '#aeaeae',
     };
     this.onCompressPress = this.onCompressPress.bind(this);
     this.onButtonPressWeed = this.onButtonPressWeed.bind(this);
     this.onButtonPressTree = this.onButtonPressTree.bind(this);
     this.onButtonPressGrass = this.onButtonPressGrass.bind(this);
+    this.onButtonPressMold = this.onButtonPressMold.bind(this);
     this.renderButtonColor = this.renderButtonColor.bind(this);
   }
 
@@ -37,12 +39,10 @@ export default class HistoryModal extends Component {
       this.setState({ activeWeed: false });
     } else {
       this.setState({ activeWeed: true });
-      this.setState({ activeTree: false });
     }
     this.setState({
       buttonWeed: this.renderButtonColor(this.state.activeWeed),
-      buttonTree: this.renderButtonColor(this.state.activeTree)
-    })
+    });
   }
 
   onButtonPressTree() {
@@ -50,13 +50,34 @@ export default class HistoryModal extends Component {
       this.setState({ activeTree: false });
     } else {
       this.setState({ activeTree: true });
-      this.setState({ activeWeed: false });
     }
     this.setState({
-      buttonWeed: this.renderButtonColor(this.state.activeWeed),
       buttonTree: this.renderButtonColor(this.state.activeTree)
-    })
+    });
   }
+
+  onButtonPressGrass() {
+    if (this.state.activeGrass) {
+      this.setState({ activeGrass: false });
+    } else {
+      this.setState({ activeGrass: true });
+    }
+    this.setState({
+      buttonGrass: this.renderButtonColor(this.state.activeGrass)
+    });
+  }
+
+  onButtonPressMold() {
+    if (this.state.activeMold) {
+      this.setState({ activeMold: false });
+    } else {
+      this.setState({ activeMold: true });
+    }
+    this.setState({
+      buttonMold: this.renderButtonColor(this.state.activeMold)
+    });
+  }
+
 
   renderButtonColor(state) {
     const pink = '#f8596a';
@@ -106,6 +127,24 @@ export default class HistoryModal extends Component {
               title='Tree'
               color='white'
               backgroundColor={this.state.buttonTree}
+            />
+          </View>
+
+          <View style={styles.buttonWrapper}>
+            <AppButton
+              onPress={this.onButtonPressGrass}
+              title='Grass'
+              color='white'
+              backgroundColor={this.state.buttonGrass}
+            />
+          </View>
+
+          <View style={styles.buttonWrapper}>
+            <AppButton
+              onPress={this.onButtonPressMold}
+              title='Mold'
+              color='white'
+              backgroundColor={this.state.buttonMold}
             />
           </View>
 
