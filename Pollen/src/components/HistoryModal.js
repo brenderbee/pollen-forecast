@@ -13,10 +13,11 @@ export default class HistoryModal extends Component {
       activeWeed: false,
       activeTree: false,
       activeGrass: false,
-      activeMold: false
+      activeMold: false,
+      buttonWeed: '#f8596a'
     };
     this.onCompressPress = this.onCompressPress.bind(this);
-    this.onButtonPress = this.onButtonPress.bind(this);
+    this.onButtonPressWeed = this.onButtonPressWeed.bind(this);
     this.renderButtonColor = this.renderButtonColor.bind(this);
   }
 
@@ -27,22 +28,22 @@ export default class HistoryModal extends Component {
     );
   }
 
-  onButtonPress(item) {
-    Alert.alert(item);
-    // if (this.state.activeWeed) {
-    //   this.setState({ activeWeed: false });
-    // } else {
-    //   this.setState({ activeWeed: true });
-    // }
+  onButtonPressWeed() {
+    if (this.state.activeWeed) {
+      this.setState({ activeWeed: false });
+    } else {
+      this.setState({ activeWeed: true });
+    }
+    this.setState({ buttonWeed: this.renderButtonColor(this.state.activeWeed) })
   }
 
-  renderButtonColor() {
+  renderButtonColor(state) {
     const grey = '#f8596a';
-    const pink = '#aeaeae'
-    if (this.state.activeWeed) {
-      return pink;
+    const pink = '#aeaeae';
+    if (state) {
+      return grey;
     }
-    return grey;
+    return pink;
   }
 
   render() {
@@ -69,19 +70,16 @@ export default class HistoryModal extends Component {
         </View>
         <View style={styles.mainButtonWrapper}>
 
-          {
-            pollens.map((item, key)=>(
-              <View style={styles.buttonWrapper}>
-                <AppButton
-                  onPress={() => this.onButtonPress(item)}
-                  title={item}
-                  color='white'
-                  backgroundColor={this.renderButtonColor()}
-                  key={key}
-                />
-              </View>
-            )
-          )}
+          <View style={styles.buttonWrapper}>
+            <AppButton
+              onPress={this.onButtonPressWeed}
+              title='Weed'
+              color='white'
+              backgroundColor={this.state.buttonWeed}
+            />
+          </View>
+
+
 
         </View>
       </LinearGradient>
@@ -127,3 +125,17 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
+
+// {
+//   pollens.map((item, key)=>(
+//     <View style={styles.buttonWrapper}>
+//       <AppButton
+//         onPress={() => this.onButtonPress(item)}
+//         title={item}
+//         color='white'
+//         backgroundColor={this.renderButtonColor()}
+//         key={key}
+//       />
+//     </View>
+//   )
+// )}
