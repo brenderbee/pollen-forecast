@@ -14,10 +14,14 @@ export default class HistoryModal extends Component {
       activeTree: false,
       activeGrass: false,
       activeMold: false,
-      buttonWeed: '#f8596a'
+      buttonWeed: '#aeaeae',
+      buttonTree: '#aeaeae',
+      buttonGrass: '#aeaeae',
     };
     this.onCompressPress = this.onCompressPress.bind(this);
     this.onButtonPressWeed = this.onButtonPressWeed.bind(this);
+    this.onButtonPressTree = this.onButtonPressTree.bind(this);
+    this.onButtonPressGrass = this.onButtonPressGrass.bind(this);
     this.renderButtonColor = this.renderButtonColor.bind(this);
   }
 
@@ -33,17 +37,34 @@ export default class HistoryModal extends Component {
       this.setState({ activeWeed: false });
     } else {
       this.setState({ activeWeed: true });
+      this.setState({ activeTree: false });
     }
-    this.setState({ buttonWeed: this.renderButtonColor(this.state.activeWeed) })
+    this.setState({
+      buttonWeed: this.renderButtonColor(this.state.activeWeed),
+      buttonTree: this.renderButtonColor(this.state.activeTree)
+    })
+  }
+
+  onButtonPressTree() {
+    if (this.state.activeTree) {
+      this.setState({ activeTree: false });
+    } else {
+      this.setState({ activeTree: true });
+      this.setState({ activeWeed: false });
+    }
+    this.setState({
+      buttonWeed: this.renderButtonColor(this.state.activeWeed),
+      buttonTree: this.renderButtonColor(this.state.activeTree)
+    })
   }
 
   renderButtonColor(state) {
-    const grey = '#f8596a';
-    const pink = '#aeaeae';
+    const pink = '#f8596a';
+    const grey = '#aeaeae';
     if (state) {
-      return grey;
+      return pink;
     }
-    return pink;
+    return grey;
   }
 
   render() {
@@ -79,7 +100,14 @@ export default class HistoryModal extends Component {
             />
           </View>
 
-
+          <View style={styles.buttonWrapper}>
+            <AppButton
+              onPress={this.onButtonPressTree}
+              title='Tree'
+              color='white'
+              backgroundColor={this.state.buttonTree}
+            />
+          </View>
 
         </View>
       </LinearGradient>
