@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Button, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 
 function AppButton({ title, color, backgroundColor, onPress }) {
   const styles = StyleSheet.create({
@@ -15,22 +15,20 @@ function AppButton({ title, color, backgroundColor, onPress }) {
       width: '100%',
       alignItems: 'center',
       justifyContent: 'center',
+    },
+    buttonTitle: {
+      color: `${color}`,
+      fontSize: 16
     }
   });
 
   return (
     <TouchableOpacity onPress={onPress} style={styles.opacityStyle}>
       <View style={styles.buttonWrapper}>
-        <Button
-          onPress={onPress}
-          title={title}
-          color={color}
-          accessibilityLabel="Learn more about this button"
-        />
+        <Text style={styles.buttonTitle}>{title}</Text>
       </View>
     </TouchableOpacity>
   );
 }
-
 
 export { AppButton };
